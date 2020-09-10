@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+     	 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+
+
+</head>
+<body>
+<div >
+    <div class="bg-dark">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'magazine-home' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                   <li class="nav-item">
+                  <a class="nav-link " href="{% url 'magazine-about' %}">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Policy</a>
+                </li>
+
+
+            </div>
+             <ul class="nav justify-content-end ">
+                   <li class="nav-item">
+                   <a class="nav-link text-light " href="#">Profile</a>
+                    </li>
+                  <li class="nav-item">
+                   <a class="nav-link text-light " href="#">Login</a>
+                    </li>
+                  <li class="nav-item">
+                   <a class="nav-link text-light " href="#">Logout</a>
+                    </li>
+                  <li class="nav-item">
+                   <a class="nav-link text-light " href="#">Register</a>
+                    </li>
+
+
+
+              </ul>
+          </nav>
+    </div>
+</div>
+
+</div>
+
+
+            <div class="col-md-12 bg-light">
+                <div class="text-dark  text-center  display-4"><span text-><b>D</b></span><span>igital Magazine</span></div>
+                <div class="text-center text-dark-50 p-1" >Learn Dream Sucess</div>
+            </div>
+        </div>
+<div class="container">
+    <div class="row">
+
+        {% block content1 %}
+
+        {% endblock content1 %}
+        <div class="col-sm-3 p-4">
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action bg-dark">
+                  <span class="text-center"><b class="text-white ">Posts</b></span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+                <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+                <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
+              </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+
+            </div>
+           {% block content %}
+     <!--Content Goes Here-->
+    {% endblock content%}
+    </div>
+    </div>
+
+ <div class="p-4">
+  <nav class=" text-center text-white  bg-dark fixed-bottom ">
+    <span >All copy right reserved by<br> &copy; SACHIN LAL M S</span>
+    <!-- Navbar content -->
+  </nav>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script><script>Prism.plugins.autoloader.languages_path = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/'</script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
