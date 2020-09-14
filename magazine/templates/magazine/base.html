@@ -37,18 +37,25 @@
 
             </div>
              <ul class="nav justify-content-end ">
+                 {% if user.is_authenticated %}
+                  <li class="nav-item">
+                   <a class="nav-link text-light " href="#">New Post</a>
+                    </li>
                    <li class="nav-item">
                    <a class="nav-link text-light " href="#">Profile</a>
                     </li>
+                 <li class="nav-item">
+                   <a class="nav-link text-light " href="#">Logout</a>
+                    </li>
+                 {% else %}
                   <li class="nav-item">
                    <a class="nav-link text-light " href="#">Login</a>
                     </li>
+
                   <li class="nav-item">
-                   <a class="nav-link text-light " href="#">Logout</a>
+                   <a class="nav-link text-light " href="{% url 'register' %}">Register</a>
                     </li>
-                  <li class="nav-item">
-                   <a class="nav-link text-light " href="#">Register</a>
-                    </li>
+                 {% endif %}
 
 
 
@@ -67,6 +74,15 @@
         </div>
 <div class="container">
     <div class="row">
+        <div class="col-md-8 p-3">
+                 {% if messages %}
+        {% for message in messages %}
+        <div class="alert text-center alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        </div>
 
         {% block content1 %}
 
@@ -74,16 +90,20 @@
         <div class="col-sm-3 p-4">
             <div class="list-group">
                 <a href="#" class="list-group-item list-group-item-action bg-dark">
-                  <span class="text-center"><b class="text-white ">Posts</b></span>
+                  <span ><b class="text-white text-center ">Posts</b></span>
                 </a>
-                <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-                <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
+                {% for post in post_list %}
+                <a href="{% url 'post-details' post.id %}" class="list-group-item list-group-item-action">{{ post.title }}</a>
+                {% endfor %}
               </div>
         </div>
     </div>
 </div>
+
+
+     {% block content2 %}
+     <!--Content Goes Here-->
+    {% endblock content2%}
 <div class="container">
         <div class="row">
             <div class="col-sm-3">

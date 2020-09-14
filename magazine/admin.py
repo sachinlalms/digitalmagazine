@@ -3,4 +3,8 @@ from django.contrib import admin
 # Register your models here.
 from magazine.models import Post
 
-admin.site.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('title','author')
+
+
+admin.site.register(Post, PostAdmin)
