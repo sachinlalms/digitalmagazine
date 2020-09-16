@@ -45,11 +45,11 @@
                    <a class="nav-link text-light " href="#">Profile</a>
                     </li>
                  <li class="nav-item">
-                   <a class="nav-link text-light " href="#">Logout</a>
+                   <a class="nav-link text-light " href="{% url 'logout' %}">Logout</a>
                     </li>
                  {% else %}
                   <li class="nav-item">
-                   <a class="nav-link text-light " href="#">Login</a>
+                   <a class="nav-link text-light " href="{% url 'login' %}">Login</a>
                     </li>
 
                   <li class="nav-item">
@@ -87,18 +87,7 @@
         {% block content1 %}
 
         {% endblock content1 %}
-        <div class="col-sm-3 p-4">
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action bg-dark">
-                  <span ><b class="text-white text-center ">Posts</b></span>
-                </a>
-                {% for post in post_list %}
-                <a href="{% url 'post-details' post.id %}" class="list-group-item list-group-item-action">{{ post.title }}</a>
-                {% endfor %}
-              </div>
-        </div>
-    </div>
-</div>
+
 
 
      {% block content2 %}

@@ -35,7 +35,20 @@
               </div>
 
         </div>
+<div class="col-sm-3 p-4">
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action bg-dark">
+                  <span ><b class="text-white text-center ">Posts</b></span>
+                </a>
+                {% for post in post_list %}
+                <a href="{% url 'post-details' post.id %}" class="list-group-item list-group-item-action">{{ post.title }}</a>
+                {% endfor %}
+              </div>
+        </div>
+    </div>
+</div>
 {% endblock content1 %}
+
 {% block content2 %}
 <div class="container bg-light">
     <div class="text-center text-dark display-4 p-4 ">Articles</div>
