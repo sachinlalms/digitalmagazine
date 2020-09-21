@@ -4,11 +4,13 @@
 {% block content2 %}
 <div class="col-md-8">
   <div class="content-section">
+
+
   <div class="media">
-    <img class="rounded-circle account-img" src="{{ user.profile.img.url }}">
+    <img class="rounded-circle w-25 h-25 p-3 account-img" src="{{ user.profile.img.url }}">
     <div class="media-body">
-      <h2 class="account-heading">{{ user.username }}</h2>
-      <p class="text-secondary">{{ user.email }}</p>
+      <h2 class="account-heading pl-4 pt-3">{{ user.username }}</h2>
+      <p class="text-secondary pl-4 pt-1">{{ user.email }}</p>
     </div>
   </div>
   <!-- FORM HERE -->
